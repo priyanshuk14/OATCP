@@ -1,0 +1,6 @@
+We initialize a vector dp of integers with length n+1 to store the counts of ways to achieve each sum from 0 to n. Initially, all elements of dp are set to 0.
+There is a single way to achieve a sum of 0, which is by not throwing the dice. Thus, we set dp[0] to 1.
+We iterate through each possible outcome of throwing a dice, ranging from 1 to 6. For each outcome i, we update the dp vector to calculate the number of ways to achieve each sum from i to n.
+Nested within the outer loop, an inner loop iterates through the possible sums from i to n. We update dp[j] by adding the count of ways to achieve the sum j - i.
+Once all counts are updated, we return the value of dp[n], representing the number of ways to achieve the desired sum n using the dice outcomes.
+In the main function, we input the number of test cases t. For each test case, we input the target sum sum. If the sum is negative, implying an impossible scenario, we print "Not Possible". Otherwise, we calculate and output the number of ways to achieve the sum using the countWays function.
